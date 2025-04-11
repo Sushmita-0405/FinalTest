@@ -8,8 +8,8 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t my-repo .
-      - docker tag my-repo:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/my-repo:latest
+      - docker build -t $my-repo .
+      - docker tag $my-repo:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$my-repo:latest
   post_build:
     commands:
       - echo Pushing the Docker image to ECR...
